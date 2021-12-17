@@ -15,10 +15,13 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/budget", {
-  useNewUrlParser: true,
-  useFindAndModify: false
-});
+mongoose.connect(
+  "mongodb+srv://budgetdb:Cs668464$@cluster0.eacyz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+  }
+);
 
 // routes
 app.use(require("./routes/api.js"));
